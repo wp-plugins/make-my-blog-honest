@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MakeMyBlogHonest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-03 12:35-0500\n"
+"PO-Revision-Date: 2011-11-03 12:37-0500\n"
+"Last-Translator: Dan Imbrogno <dan.imbrogno@brolly.ca>\n"
+"Language-Team: Blogging Squared <dan.imbrogno@bloggingsquared.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: index.php:111
+msgid "Select the plugin step"
+msgstr "Seleccionar el paso del plug-in"
+
+#: index.php:112
+msgid "next"
+msgstr "pr&oacute;ximo"
+
+#: index.php:113
+msgid "previous"
+msgstr "anterior"
+
+#: index.php:181
+msgid "Step 1 - Plugins within classes"
+msgstr "Paso 1 - hacer el plugin dentro de una clase"
+
+#: index.php:182
+msgid "Step 2 - Using filters"
+msgstr "Paso 2 - utilizando filtros"
+
+#: index.php:183
+msgid "Step 3 - Using actions, attaching JS and CSS"
+msgstr "Paso 3 - utilizando acciones, adjuntando JS y CSS"
+
+#: index.php:184
+msgid "Step 4 - Configuration pages"
+msgstr "Paso 4 - p&aacute;ginas"
+
+#: index.php:185
+msgid "Step 5 - Internationalization"
+msgstr "Paso 5 - internacionalizaci&oacute;n"
+
+#: index.php:186
+msgid "Step 6 - Creating database tables"
+msgstr "Paso 6 - creando tablas en el base de datos"
+
+#: index.php:187
+msgid "Step 7 - Routing actions"
+msgstr "Paso 7 - dirigiendo acciones"
+
+#: index.php:188
+msgid "Step 8 - Database table interaction"
+msgstr "Paso 8 - interactuar con las tablas de la base de datos"
+
+#: index.php:189
+msgid "Step 9 - Ajax on admin pages"
+msgstr "Paso 9 - ajax en las p&aacute;ginas de administraci&oacute;n"
+
+#: index.php:190
+msgid "Step 10 - Ajax on viewer pages"
+msgstr "Paso 10 - ajax en last p&aacute;ginas de espectador"
+
+#: index.php:191
+msgid "Step 11 - Time to experiment!"
+msgstr "Paso 11 - tiempo para experimentar!"
+
+#: step10.php:33
+#: Step11.php:37
+#: Step5.php:32
+#: Step6.php:36
+#: Step7.php:38
+#: Step8.php:33
+#: Step9.php:33
+msgid "you can't beat his prices!"
+msgstr "sus precios son los mejores!"
+
+#: step10.php:99
+msgid "Deals are currently unavailable."
+msgstr "Las ofertas no est&aacute;n disponibles actualmente."
+
+#: step10.php:146
+#: Step11.php:140
+#: Step5.php:144
+#: Step6.php:144
+#: Step7.php:148
+#: Step8.php:138
+#: Step9.php:138
+#: html/honesty-settings-page-step5.php:12
+msgid "Honesty Settings Page"
+msgstr "Pagina de ajustes de honestidad"
+
+#: step10.php:147
+#: Step11.php:141
+#: Step5.php:145
+#: Step6.php:145
+#: Step7.php:149
+#: Step8.php:139
+#: Step9.php:139
+msgid "Honesty Settings"
+msgstr "Ajustes de honestidad"
+
+#: step10.php:157
+#: Step11.php:151
+#: Step7.php:160
+#: Step8.php:147
+#: Step9.php:147
+#: html/deal-configuration-page-step8.php:5
+#: html/deal-configuration-page.php:5
+msgid "Deal Configuration Page"
+msgstr "Pagina de Configuraci&oacute;n de Ofertas"
+
+#: step10.php:158
+#: Step11.php:152
+#: Step7.php:161
+#: Step8.php:148
+#: Step9.php:148
+msgid "Deal Configuration"
+msgstr "Configuraci&oacute;n de Ofertas"
+
+#: step10.php:260
+#: step10.php:285
+#: step10.php:303
+#: step10.php:316
+#: Step11.php:254
+#: Step11.php:279
+#: Step11.php:297
+#: Step11.php:310
+#: Step7.php:235
+#: Step8.php:210
+#: Step8.php:231
+#: Step8.php:266
+#: Step8.php:282
+#: Step9.php:269
+#: Step9.php:300
+#: Step9.php:318
+#: Step9.php:331
+msgid "You are not authorized to perform this action."
+msgstr "Usted no est&aacute; autorizado para realizar esta acci&oacute;n."
+
+#: step10.php:436
+#: Step11.php:419
+#: Step8.php:329
+#: Step9.php:423
+msgid "The product name cannot be empty"
+msgstr "No se puede dejar la nombre del producto vac&iacute;a"
+
+#: step10.php:446
+#: Step11.php:429
+#: Step8.php:340
+#: Step9.php:433
+msgid "The sale price must be a valid number."
+msgstr "El precio de la oferta tiene que ser un numero v&aacute;lido."
+
+#: step10.php:462
+#: Step11.php:445
+#: Step8.php:357
+#: Step9.php:449
+msgid "A year month and day are required for the expiration date."
+msgstr "El a&ntilde;o, mes y dia se requieren para la fecha de vencimiento."
+
+#: step10.php:488
+#: Step11.php:471
+#: Step8.php:385
+#: Step9.php:475
+msgid "Deal has been added."
+msgstr "La oferta ha sido a&ntilde;adado."
+
+#: step10.php:495
+#: Step11.php:478
+#: Step8.php:393
+#: Step9.php:482
+msgid "There was a problem adding the deal, please try again."
+msgstr "Hab&iactue;a una problema a&ntilde;adano la oferta, intentalo de nuevo."
+
+#: step10.php:512
+#: step10.php:539
+#: Step11.php:495
+#: Step11.php:522
+#: Step8.php:411
+#: Step8.php:440
+#: Step9.php:499
+#: Step9.php:526
+msgid "There was a problem changing the deal status, please try again."
+msgstr "Hab&iacute;a una problema cambiando el estado de la oftera, intentalo de nuevo."
+
+#: step10.php:531
+#: Step11.php:514
+#: Step8.php:432
+#: Step9.php:518
+msgid "The enabled status has been updated."
+msgstr "El estado ha sido actualizado."
+
+#: step10.php:556
+#: Step11.php:539
+#: Step8.php:458
+#: Step9.php:543
+msgid "There was a problem deleting the deal, please try again."
+msgstr "Hab&iacute;a una problema "
+
+#: step10.php:573
+#: Step11.php:556
+#: Step8.php:477
+#: Step9.php:560
+msgid "The deal has been deleted."
+msgstr "La oferta ha sido eliminado."
+
+#: step10.php:581
+#: Step11.php:564
+#: Step8.php:485
+#: Step9.php:568
+msgid "There was a problem deleting the deal, please try again.."
+msgstr "Hab&iacute;a una problema eliminando la oftera, intentalo de nuevo."
+
+#: Step5.php:95
+#: Step6.php:98
+#: Step7.php:102
+#: Step8.php:92
+#: Step9.php:92
+msgid "Acme Anvils only $79.99 until August 28th, 2011!"
+msgstr "Solo un dia &ndash; Acme Anvils solo $79.99!"
+
+#: html/deal-configuration-page-step8.php:35
+#: html/deal-configuration-page.php:30
+msgid "Add a Deal"
+msgstr "A&ntilde;adir una oferta"
+
+#: html/deal-configuration-page-step8.php:60
+#: html/deal-configuration-page.php:55
+msgid "Product Name"
+msgstr "Nombre del producto"
+
+#: html/deal-configuration-page-step8.php:68
+#: html/deal-configuration-page.php:63
+msgid "Sale Price"
+msgstr "Precio de la oferta"
+
+#: html/deal-configuration-page-step8.php:76
+#: html/deal-configuration-page.php:71
+msgid "Enabled"
+msgstr "Activado"
+
+#: html/deal-configuration-page-step8.php:94
+#: html/deal-configuration-page.php:89
+msgid "January"
+msgstr "Enero"
+
+#: html/deal-configuration-page-step8.php:95
+#: html/deal-configuration-page.php:90
+msgid "February"
+msgstr "Febrero"
+
+#: html/deal-configuration-page-step8.php:96
+#: html/deal-configuration-page.php:91
+msgid "March"
+msgstr "Marzo"
+
+#: html/deal-configuration-page-step8.php:97
+#: html/deal-configuration-page.php:92
+msgid "April"
+msgstr "Abril"
+
+#: html/deal-configuration-page-step8.php:98
+#: html/deal-configuration-page.php:93
+msgid "May"
+msgstr "Mayo"
+
+#: html/deal-configuration-page-step8.php:99
+#: html/deal-configuration-page.php:94
+msgid "June"
+msgstr "Junio"
+
+#: html/deal-configuration-page-step8.php:100
+#: html/deal-configuration-page.php:95
+msgid "July"
+msgstr "Julio"
+
+#: html/deal-configuration-page-step8.php:101
+#: html/deal-configuration-page.php:96
+msgid "August"
+msgstr "Agosto"
+
+#: html/deal-configuration-page-step8.php:102
+#: html/deal-configuration-page.php:97
+msgid "September"
+msgstr "Septiembre"
+
+#: html/deal-configuration-page-step8.php:103
+#: html/deal-configuration-page.php:98
+msgid "October"
+msgstr "Octubre"
+
+#: html/deal-configuration-page-step8.php:104
+#: html/deal-configuration-page.php:99
+msgid "November"
+msgstr "Noviembre"
+
+#: html/deal-configuration-page-step8.php:105
+#: html/deal-configuration-page.php:100
+msgid "December"
+msgstr "Deciembre"
+
+#: html/deal-configuration-page-step8.php:115
+#: html/deal-configuration-page.php:109
+msgid "Expires"
+msgstr "vencer&aacute;"
+
+#: html/deal-configuration-page-step8.php:214
+#: html/deal-configuration-page.php:207
+msgid "Deals"
+msgstr "Ofertas"
+
+#: html/honesty-settings-page-step5.php:42
+msgid "Cheesy slogan text"
+msgstr "Text del eslogan caseoso"
+
+#: html/honesty-settings-page-step5.php:50
+msgid "Select a horrible banner"
+msgstr "Elige un bandera horrible"
+
+#: html/honesty-settings-page-step5.php:57
+msgid "Automatic"
+msgstr "Automatica"
+
+#: html/honesty-settings-page-step5.php:58
+msgid "Store front"
+msgstr "Escaparate"
+
+#: html/honesty-settings-page-step5.php:59
+msgid "Check out"
+msgstr "Cajas"
+
+#: html/honesty-settings-page-step5.php:60
+msgid "Aisles"
+msgstr "Pasillos"
+
+#: html/honesty-settings-page-step5.php:82
+msgid "Enable the disgusting background"
+msgstr "Prender el fondo asqueroso"
+
+#: html/honesty-settings-page-step5.php:90
+msgid "Enable the annoying popup"
+msgstr "Prender el popup fastidioso"
+
+#: html/honesty-settings-page-step5.php:98
+msgid "Save Changes"
+msgstr "Guardar los cambios"
+
+#: html/elements/deal-display.php:10
+#, php-format
+msgid "%s only $%s until %s!"
+msgstr "%s solo $%s hasta %s!"
+
+#: html/elements/deal-display.php:17
+msgid "No deals today, maybe tomorrow!"
+msgstr "No hay ofertas hoy, quiz&aacute;s ma&ntilde;ana!"
+
+#: html/elements/deal-list.php:15
+msgid "Actions"
+msgstr "Acciones"
+
+#: html/elements/deal-list.php:53
+msgid "Disable"
+msgstr "Desactivar"
+
+#: html/elements/deal-list.php:58
+msgid "Enable"
+msgstr "Activar"
+
+#: html/elements/deal-list.php:86
+msgid "Delete Deal"
+msgstr "Elimina la oferta"
+
+#~ msgid "Show Code"
+#~ msgstr "Mostrar el c&oacute;digo"
+
+#~ msgid "Hide Code"
+#~ msgstr "Esconder el c&oacute;digo"
+
+#~ msgid "Step"
+#~ msgstr "Paso"
