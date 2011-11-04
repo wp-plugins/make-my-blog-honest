@@ -3,7 +3,7 @@
 Plugin Name: Make My Blog Honest
 Plugin URI: http://bloggingsquared.com/plugins/Word11Demo
 Description: This plugin will teach you how to build a plug-in of your own, with Honest Eds as the example client.
-Version: 1.3
+Version: 1.3.1
 Author: Dan Imbrogno
 Author URI: http://bloggingsquared.com
 License: GPL2
@@ -39,7 +39,8 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 		
 		const PREFIX = 'mmbhg';
 		
-		var $plugin_url = false;
+		private $plugin_url = false;
+		private $td = 'mmbhg';
 		
 		function __construct()
 		{
@@ -48,6 +49,7 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 			
 			add_action('init', array($this,'AddOptions'));			
 			add_action('init', array($this,'RegisterScriptsAndStyles'));
+
 			add_action('wp_print_styles',array($this,'PrintStyles'));
 			add_action('admin_print_styles',array($this,'PrintStyles'));
 			add_action('wp_print_scripts', array($this,'PrintScripts'));
@@ -56,6 +58,12 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 			$step = $this->GetCurrentStep();
 			
 			$this->LoadPluginStep($step);
+			
+			if( class_exists('MakeMyBlogHonest') )
+			{
+				$this->td = MakeMyBlogHonest::PREFIX;
+				load_plugin_textdomain( $this->td, null, basename(dirname(__FILE__)).'/language/' );
+			}
 			
 		}
 		
@@ -103,14 +111,14 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 			if('wp-login.php' == $pagenow ) return false; 
 			
 			$steps = $this->GetStepNames();
-	
+			
 			wp_enqueue_script('makemybloghonestguide');
 			
 			wp_localize_script('makemybloghonestguide', self::PREFIX,
 				 array(
-					'txt_step_select'=>__('Select the plugin step',self::PREFIX),
-					'txt_next'=>__('next',self::PREFIX),
-					'txt_prev'=>__('previous',self::PREFIX),
+					'txt_step_select'=>__('Select the plugin step',$this->td),
+					'txt_next'=>__('next',$this->td),
+					'txt_prev'=>__('previous',$this->td),
 					'current_step'=>get_option(self::PREFIX.'_step'),
 					'nonce_change_step'=>wp_create_nonce('ChangeStep'),
 					'l10n_print_after' => self::PREFIX.'_steps = ' . json_encode( $steps ) . ';'
@@ -174,21 +182,21 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 			);
 		}
 		
-		public static function GetStepNames()
+		public function GetStepNames()
 		{
 		
 			return array(
-				1=>__('Step 1 - Plugins within classes',self::PREFIX),
-				2=>__('Step 2 - Using filters',self::PREFIX),
-				3=>__('Step 3 - Using actions, attaching JS and CSS',self::PREFIX),
-				4=>__('Step 4 - Configuration pages',self::PREFIX),
-				5=>__('Step 5 - Internationalization',self::PREFIX),
-				6=>__('Step 6 - Creating database tables',self::PREFIX),
-				7=>__('Step 7 - Routing actions',self::PREFIX),
-				8=>__('Step 8 - Database table interaction',self::PREFIX),
-				9=>__('Step 9 - Ajax on admin pages',self::PREFIX),
-				10=>__('Step 10 - Ajax on viewer pages',self::PREFIX),
-				11=>__('Step 11 - Time to experiment!',self::PREFIX)
+				1=>__('Step 1 - Plugins within classes',$this->td),
+				2=>__('Step 2 - Using filters',$this->td),
+				3=>__('Step 3 - Using actions, attaching JS and CSS',$this->td),
+				4=>__('Step 4 - Configuration pages',$this->td),
+				5=>__('Step 5 - Internationalization',$this->td),
+				6=>__('Step 6 - Creating database tables',$this->td),
+				7=>__('Step 7 - Routing actions',$this->td),
+				8=>__('Step 8 - Database table interaction',$this->td),
+				9=>__('Step 9 - Ajax on admin pages',$this->td),
+				10=>__('Step 10 - Ajax on viewer pages',$this->td),
+				11=>__('Step 11 - Time to experiment!',$this->td)
 			);
 		}
 	
