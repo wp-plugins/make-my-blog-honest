@@ -24,6 +24,7 @@ if(!class_exists( 'MakeMyBlogHonest' )) {
 			and register actions. */
 		function __construct() {
 			
+			
 			$this->plugin_url = plugins_url(basename(dirname(__FILE__)));
 			
 			/* The function plugins_url returns the url to the WordPress plugins 

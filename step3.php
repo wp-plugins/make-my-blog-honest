@@ -64,7 +64,7 @@ if(!class_exists( 'MakeMyBlogHonest' )) {
 				'1.0',
 				true
 			);
-			
+
 			wp_enqueue_script( 'eds_annoying_popup' );
 			
 			/* For a complete list of scripts bundled with WordPress visit http://is.gd/qVDsjc */

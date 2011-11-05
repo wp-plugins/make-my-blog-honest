@@ -34,22 +34,15 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			
 			add_action( 'admin_menu', array( $this, 'InsertAdminMenuLink' ) );
 			
-			add_option( self::PREFIX . '_cheesy_slogan_text', 
-				__( 'you can\'t beat his prices!', self::PREFIX ) );
+			add_action( 'init', array( $this, 'LoadPluginTextDomain' ), 1 );
 			
-			add_option( self::PREFIX . '_horrible_banner_image', '1');
-			
-			add_option( self::PREFIX . '_disgusting_background_enabled', true);
-			
-			add_option( self::PREFIX . '_annoying_popup_enabled', true);
+			add_action( 'init', array( $this, 'AddDefaultOptions' ), 2 );
 			
 			add_action( 'admin_init', array( $this, 'RegisterAdminSettings' ) );
 						
 			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsAnnoyingPopup' ) );
 			
 			add_action( 'wp_print_styles', array( $this, 'AddEdsDisgustingBackground' ) );
-			
-			load_plugin_textdomain( self::PREFIX, null, basename(dirname(__FILE__)).'/language/' );
 			
 			add_action( 'init', array( $this, 'CheckUpdate' ) , 1 );
 			
@@ -60,6 +53,27 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			
 /* END NEW CODE */
 			
+		}
+		
+		function LoadPluginTextDomain()
+		{
+			  
+			load_plugin_textdomain( self::PREFIX, null, basename(dirname(__FILE__)).'/language/' );
+		
+		}
+		
+		function AddDefaultOptions()
+		{
+			
+			add_option( self::PREFIX . '_cheesy_slogan_text', 
+					__( 'you can\'t beat his prices!', self::PREFIX ) );
+	
+			add_option( self::PREFIX . '_horrible_banner_image', '1');
+	
+			add_option( self::PREFIX . '_disgusting_background_enabled', true);
+	
+			add_option( self::PREFIX . '_annoying_popup_enabled', true);
+				
 		}
 		
 		function AddEdsCheesySloganToTitle( $current_value, $field )
@@ -296,7 +310,7 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			if( $installed_ver < 3 )
 			{
 				
-				$sql_add_enabled =  'ALTER TABLE ' . $deals_table . 
+				$sql_add_enabled =	'ALTER TABLE ' . $deals_table . 
 					' ADD `expires` DATETIME NOT NULL AFTER `enabled`;';
 				
 				$wpdb->query( $sql_add_enabled );
