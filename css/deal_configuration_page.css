@@ -1,0 +1,27 @@
+#deal-list th#col-actions {
+	width:20%;
+}
+
+input.button-delete {
+	background:none;
+	color:red;
+	border:none;
+	border-bottom-color: red;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	text-decoration: none;
+	padding: 1px 2px;
+	border-radius: 0;
+	cursor:pointer;
+}
+
+input.button-delete:hover {
+	color:white;
+	background-color:red;
+	border-bottom-color:red;
+}
+
+#add-deal label {
+	float:left;
+	width:125px;
+}
