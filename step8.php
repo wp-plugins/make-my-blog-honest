@@ -382,7 +382,7 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			$sql = $wpdb->prepare( 
 				'INSERT INTO ' . $wpdb->prefix . self::PREFIX . 
 					'_deals(`product_name`, `sale_price`, `enabled`, `expires`)'.
-					' VALUES(%s,%s, %s, %s);', 
+					' VALUES(%s, %f, %d, %s);', 
 				$product_name, 
 				$sale_price, 
 				$enabled, 
