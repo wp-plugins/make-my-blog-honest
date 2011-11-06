@@ -1,0 +1,28 @@
+#mmbhg-guide .plugin-options {
+	background-color: #000;
+	color:#FFF;
+	position:fixed;
+	bottom:0;
+	width:100%;
+	z-index:100001;
+	height:41px;
+	font-family:Arial;
+	text-align:left;
+}
+
+#mmbhg-guide .plugin-options a {
+	color:#FFF;
+	text-decoration: underline;
+}
+
+#mmbhg-guide .plugin-options form {
+	margin:10px;
+}
+
+#mmbhg-guide .plugin-options label {
+	padding-right:10px;
+}
+
+#mmbhg-step {
+	margin-right:10px;
+}
