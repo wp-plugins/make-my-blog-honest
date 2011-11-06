@@ -34,6 +34,7 @@ Learn how to build better WordPress plugins with this handy tutorial. You'll lea
 
 = 1.3.3 =
 * Improved installation functions, stopped using activation / deactivation hooks
+* Fixed $wpdb->prepare placeholders for adding a deal
 
 = 1.3.2 =
 * Moved load_plugin_textdomain into init action
