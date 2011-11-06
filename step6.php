@@ -212,7 +212,7 @@ if(!class_exists( 'MakeMyBlogHonest' )) {
 				longer exists, so lets call our activate function to be sure. */
 			if ($installed_ver == false) {
 
-				MakeMyBlogHonest_Activate();
+				$this->InstallTable();
 
 				return false;
 
@@ -257,71 +257,47 @@ if(!class_exists( 'MakeMyBlogHonest' )) {
 		
 		}
 		
+		/* Runs if the plugin needs to add the table */
+		function InstallTable() {
+		
+			global $wpdb;
+	
+			$deals_table = $wpdb->prefix . self::PREFIX.'_deals';
+			
+			/* Make sure we aren't going to overwrite an existing table. */
+			if($wpdb->get_var( 'SHOW TABLES LIKE \'' . $deals_table . '\';' ) != $deals_table)
+			{
+				
+				$create_deals_table_sql = 'CREATE TABLE ' . $deals_table. ' (
+							`id` mediumint(9) NOT NULL AUTO_INCREMENT,
+							`product_name` varchar(256) NOT NULL,
+							`sale_price` float NOT NULL,
+							`enabled` tinyint(1) NOT NULL,
+							`expires` DATETIME NOT NULL,
+							UNIQUE KEY id (id)
+					);';
+				
+				/* Create the table */
+				$wpdb->query( $create_deals_table_sql );
+				
+			}
+			
+			/* Save the table version for future reference */
+			add_option( self::PREFIX.'_db_version', self::DB_VERSION );
+			
+		}
+		
 /* END NEW CODE */
 			
 	}
 	
 	$myHonestBlog = new MakeMyBlogHonest();
 	
-/* NEW CODE */
-	
-	/* It's best to do activation and deactivation outside the class, 
-		because when activation occurs, the plugin object is not yet
-		created */
-	register_activation_hook( 
-		'makemybloghonest/makemybloghonest.php' , 
-		'MakeMyBlogHonest_Activate' 
-	);
-	
-	register_deactivation_hook( 
-		'makemybloghonest/makemybloghonest.php' , 
-		'MakeMyBlogHonest_Deactivate' 
-	);
-	
-	/* This runs only on activation. Does not run when plugin is upgraded */
-	function MakeMyBlogHonest_Activate() {
-	
-		global $wpdb;
-
-		$deals_table = $wpdb->prefix . MakeMyBlogHonest::PREFIX.'_deals';
-		
-		/* Make sure we aren't going to overwrite an existing table. */
-		if($wpdb->get_var( 'SHOW TABLES LIKE \'' . $deals_table . '\';' ) != $deals_table)
-		{
-			
-			$create_deals_table_sql = 'CREATE TABLE ' . $deals_table. ' (
-						`id` mediumint(9) NOT NULL AUTO_INCREMENT,
-						`product_name` varchar(256) NOT NULL,
-						`sale_price` float NOT NULL,
-						`enabled` tinyint(1) NOT NULL,
-						`expires` DATETIME NOT NULL,
-						UNIQUE KEY id (id)
-				);';
-			
-			/* Create the table */
-			$wpdb->query( $create_deals_table_sql );
-			
-		}
-		
-		/* Save the table version for future reference */
-		add_option( MakeMyBlogHonest::PREFIX.'_db_version', MakeMyBlogHonest::DB_VERSION );
-		
-	}
-	
-	/* It's uncommon to need to do anything on plugin deactivation. 
-		Don't delete data here the user might want to retrieve when they 
-		reactivate your plugin! */
-	function MakeMyBlogHonest_Deactivate() {
-		
-	}
-	
-	/* To run code when your user deletes your plugin, create a file called
-		uninstall.php in your plugins root directory. Check out the uninstall.php
-		file to learn more. */
-	
-/* END NEW CODE */
-	
 }
+
+/* To run code when your user deletes your plugin, create a file called
+	uninstall.php in your plugins root directory. Check out the uninstall.php
+	file to learn more. */
 
 /* We've now added our own table to the WordPress database. BooYah! */
 

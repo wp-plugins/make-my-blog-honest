@@ -596,7 +596,7 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			
 			if ($installed_ver == false) {
 
-				MakeMyBlogHonest_Activate();
+				$this->InstallTable();
 
 				return false;
 
@@ -634,50 +634,36 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			update_option( self::PREFIX . '_db_version', self::DB_VERSION );
 		
 		}
+		
+		function InstallTable() {
+		
+			global $wpdb;
+	
+			$deals_table = $wpdb->prefix . self::PREFIX.'_deals';
+			
+			if($wpdb->get_var( 'SHOW TABLES LIKE \'' . $deals_table . '\';' ) != $deals_table)
+			{
+				
+				$create_deals_table_sql = 'CREATE TABLE ' . $deals_table. ' (
+							`id` mediumint(9) NOT NULL AUTO_INCREMENT,
+							`product_name` varchar(256) NOT NULL,
+							`sale_price` float NOT NULL,
+							`enabled` tinyint(1) NOT NULL,
+							`expires` DATETIME NOT NULL,
+							UNIQUE KEY id (id)
+					);';
+				
+				$wpdb->query( $create_deals_table_sql );
+				
+			}
+			
+			add_option( self::PREFIX.'_db_version', self::DB_VERSION );
+			
+		}
 					
 	}
 	
 	$myHonestBlog = new MakeMyBlogHonest();
-	
-	register_activation_hook( 
-		'makemybloghonest/makemybloghonest.php' , 
-		'MakeMyBlogHonest_Activate' 
-	);
-	
-	register_deactivation_hook( 
-		'makemybloghonest/makemybloghonest.php' , 
-		'MakeMyBlogHonest_Deactivate' 
-	);
-	
-	function MakeMyBlogHonest_Activate() {
-	
-		global $wpdb;
-
-		$deals_table = $wpdb->prefix . MakeMyBlogHonest::PREFIX.'_deals';
-
-		if($wpdb->get_var( 'SHOW TABLES LIKE \'' . $deals_table . '\';' ) != $deals_table)
-		{
-	
-			$create_deals_table_sql = 'CREATE TABLE ' . $deals_table. ' (
-						`id` mediumint(9) NOT NULL AUTO_INCREMENT,
-						`product_name` varchar(256) NOT NULL,
-						`sale_price` float NOT NULL,
-						`enabled` tinyint(1) NOT NULL,
-						`expires` DATETIME NOT NULL,
-						UNIQUE KEY id (id)
-				);';
-
-			$wpdb->query($create_deals_table_sql);
-			
-		}
-		
-		add_option( MakeMyBlogHonest::PREFIX.'_db_version', MakeMyBlogHonest::DB_VERSION );
-		
-	}
-	
-	function MakeMyBlogHonest_Deactivate() {
-		
-	}
 	
 }
 

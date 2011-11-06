@@ -3,7 +3,7 @@
 Plugin Name: Make My Blog Honest
 Plugin URI: http://bloggingsquared.com/plugins/Word11Demo
 Description: This plugin will teach you how to build a plug-in of your own, with Honest Eds as the example client.
-Version: 1.3.2
+Version: 1.3.3
 Author: Dan Imbrogno
 Author URI: http://bloggingsquared.com
 License: GPL2
