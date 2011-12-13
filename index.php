@@ -50,7 +50,7 @@ if(!class_exists('MakeMyBlogHonestGuide'))
 			add_action('init', array($this,'AddOptions'));			
 			add_action('init', array($this,'RegisterScriptsAndStyles'));
 
-			add_action('wp_print_styles',array($this,'PrintStyles'));
+			add_action('wp_enqueue_scripts',array($this,'PrintStyles'));
 			add_action('admin_print_styles',array($this,'PrintStyles'));
 			add_action('wp_print_scripts', array($this,'PrintScripts'));
 			add_action('admin_print_scripts', array($this,'PrintScripts'));

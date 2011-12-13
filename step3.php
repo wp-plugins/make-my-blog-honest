@@ -27,9 +27,9 @@ if(!class_exists( 'MakeMyBlogHonest' )) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsAnnoyingPopup' ) );
 
 			/* Here we are adding an action to run when WordPress is printing styles. 
-				The action 'wp_print_styles' only runs on viewer facing pages.
+				The action 'wp_enqueue_scripts' only runs on viewer facing pages.
 				To add styles to the admin facing pages use admin_print_styles */
-			add_action( 'wp_print_styles', array( $this, 'AddEdsDisgustingBackground' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsDisgustingBackground' ) );
 			
 			/* For a complete list of actions visit http://is.gd/lktTqj */
 			

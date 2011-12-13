@@ -3,8 +3,8 @@ Contributors: dan.imbrogno
 Donate link: http://bloggingsquared.com
 Tags: template, tutorial, plugin
 Requires at least: 3.2
-Tested up to: 3.2.1
-Stable tag: 1.3.3
+Tested up to: 3.3
+Stable tag: 1.4
 
 Learn how to build better WordPress plugins with this handy tutorial. You'll learn some good plugin techniques in this easy to follow tutorial.
 
@@ -31,6 +31,9 @@ Learn how to build better WordPress plugins with this handy tutorial. You'll lea
 4. Use Ajax on admin facing pages
 
 == Changelog ==
+
+= 1.4 =
+* Changed usage of wp_print_scripts to wp_enqueue_styles to conform to new standards introduced in WordPress 3.3
 
 = 1.3.3 =
 * Improved installation functions, stopped using activation / deactivation hooks

@@ -25,7 +25,7 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 			
 			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsAnnoyingPopup' ) );
 			
-			add_action( 'wp_print_styles', array( $this, 'AddEdsDisgustingBackground' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsDisgustingBackground' ) );
 			
 			add_action( 'admin_menu', array( $this, 'InsertAdminMenuLink' ) );
 			
@@ -37,7 +37,7 @@ if( !class_exists( 'MakeMyBlogHonest' ) ) {
 						
 			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsAnnoyingPopup' ) );
 			
-			add_action( 'wp_print_styles', array( $this, 'AddEdsDisgustingBackground' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'AddEdsDisgustingBackground' ) );
 			
 			add_action( 'init', array( $this, 'CheckUpdate' ) , 1 );
 			
